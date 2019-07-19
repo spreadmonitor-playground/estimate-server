@@ -1,0 +1,59 @@
+{
+  "name": "estimate-server",
+  "private": true,
+  "author": "Spreadmonitor",
+  "description": "The socket based server for the Estimate app.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:spreadmonitor-playground/estimate-server.git"
+  },
+  "homepage": "https://github.com/spreadmonitor-playground/estimate-server",
+  "scripts": {
+    "start": "node build/main.js",
+    "start:dev": "DEBUG=EstimatorApp:* tsc-watch --onSuccess \"node build/main.js\"",
+    "build": "npm run build:clean && npm run build:tsc",
+    "build:clean": "rimraf ./build",
+    "build:tsc": "tsc --project ./tsconfig.json",
+    "prettier:format": "prettier --write \"src/**/*.ts\"",
+    "prettier:check": "prettier --check \"src/**/*.ts\"",
+    "lint:fix": "eslint --max-warnings 0 --fix \"src/**/*.ts\"",
+    "lint:check": "eslint --max-warnings 0 \"src/**/*.ts\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint:check"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --parser markdown --write",
+      "git add"
+    ],
+    "*.ts": [
+      "prettier --parser typescript --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.4",
+    "@types/node": "^12.6.8",
+    "@types/socket.io": "^2.1.2",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "tsc-watch": "^2.2.1",
+    "typescript": "^3.5.3"
+  }
+}

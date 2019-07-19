@@ -1,0 +1,9 @@
+{
+  "name": "SM Estimator App - Server",
+  "description": "A socket-based, in-memory server for the Estimator App.",
+  "repository": "https://github.com/spreadmonitor-playground/estimate-server",
+  "keywords": ["node", "socket.io", "estimations"],
+  "env": {
+    "DEBUG": "EstimatorApp:*"
+  }
+}
