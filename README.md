@@ -1,4 +1,4 @@
-# Estimate Server
+# Estimate Server [![Build Status](https://travis-ci.com/spreadmonitor-playground/estimate-server.svg?branch=master)](https://travis-ci.com/spreadmonitor-playground/estimate-server)
 
 A socket-based, in-memory server for the [Estimate App][estimate-app-repository].
 
