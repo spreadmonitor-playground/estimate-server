@@ -1,6 +1,6 @@
 # Estimate Server
 
-A socket-based, in-memory server for the [Estimator App](estimator-app-repository).
+A socket-based, in-memory server for the [Estimate App][estimate-app-repository].
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -91,3 +91,5 @@ Example response:
 ## License
 
 [MIT](./LICENSE)
+
+[estimate-app-repository]: https://github.com/spreadmonitor-playground/estimate-app
