@@ -26,11 +26,12 @@ export class EstimationHandler {
    * Sends the estimations to all members in the specified group.
    */
   private sendEstimations(socket: Socket, group: Group): void {
-    logger(`Sending estimations ${group.id}:estimation room.`);
+    const channelName = 'getEstimations';
+    logger(`Sending estimations ${group.id}:${channelName} room.`);
 
     if (group !== null) {
-      socket.emit('getEstimations', group.estimations);
-      socket.to(group.id).emit(`getEstimations`, group.estimations);
+      socket.emit(channelName, group.estimations);
+      socket.to(group.id).emit(channelName, group.estimations);
 
       if (group.estimations.length === group.members.length) {
         logger(`All user has sent an estimation in Group#${group.id}.`);
