@@ -1,3 +1,9 @@
+/**
+ * Load the environment variables from the .env files
+ * Note: This must be configured before any app level code.
+ */
+require('dotenv-safe').config();
+
 import * as socketIo from 'socket.io';
 import { defaultGroupStore, defaultConnectionStore } from './stores';
 import { defaultEstimationHandler } from './event-handlers/estimation.class';

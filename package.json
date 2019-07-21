@@ -11,7 +11,7 @@
   "homepage": "https://github.com/spreadmonitor-playground/estimate-server",
   "scripts": {
     "start": "node build/main.js",
-    "start:dev": "DEBUG=EstimatorApp:* tsc-watch --onSuccess \"node build/main.js\"",
+    "start:dev": "tsc-watch --onSuccess \"node build/main.js\"",
     "build": "npm run build:clean && npm run build:tsc",
     "build:clean": "rimraf ./build",
     "build:tsc": "tsc --project ./tsconfig.json",
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
+    "dotenv-safe": "^6.1.0",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
