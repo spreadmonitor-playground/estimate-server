@@ -51,7 +51,7 @@ Example request:
 }
 ```
 
-### Create Group - `leaveGroup`
+### Create Group - `leaveGroups`
 
 _Channel direction:_ client -> server
 
