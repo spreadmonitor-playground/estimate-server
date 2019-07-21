@@ -26,7 +26,8 @@ export class ConnectionStore {
     const id = uuid();
     this.connections[socket.id] = { socket, user: { id, name: 'Anonymous' } };
 
-    logger(`New connection to the server (User#${id})`);
+    logger(`New connection to the server (User#${id}).`);
+    logger(`Currently ${Object.keys(this.connections).length} user is connected.`);
 
     socket.emit('getSelf', this.connections[socket.id].user);
   }
@@ -35,7 +36,11 @@ export class ConnectionStore {
     /** Remove the user from all groups */
     defaultGroupStore.leaveGroups(socket);
 
+    logger(`Connection closed. (User#${this.connections[socket.id].user.id}).`);
+
     delete this.connections[socket.id];
+
+    logger(`Currently ${Object.keys(this.connections).length} user is connected.`);
   }
 
   /**
