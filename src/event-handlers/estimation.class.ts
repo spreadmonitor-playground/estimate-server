@@ -29,8 +29,8 @@ export class EstimationHandler {
     logger(`Sending estimations ${group.id}:estimation room.`);
 
     if (group !== null) {
-      socket.emit('estimations', group.estimations);
-      socket.to(group.id).emit(`estimations`, group.estimations);
+      socket.emit('getEstimations', group.estimations);
+      socket.to(group.id).emit(`getEstimations`, group.estimations);
 
       if (group.estimations.length === group.members.length) {
         logger(`All user has sent an estimation in Group#${group.id}.`);
