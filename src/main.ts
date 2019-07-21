@@ -25,7 +25,7 @@ function main(): void {
     defaultGroupStore.sendGroups(socket);
 
     /** We bind the various event handlers. */
-    socket.on('setProfile', defaultConnectionStore.setProfile.bind(defaultGroupStore, socket));
+    socket.on('setProfile', defaultConnectionStore.setProfile.bind(defaultConnectionStore, socket));
     socket.on('createGroup', defaultGroupStore.createGroup.bind(defaultGroupStore, socket));
     socket.on('enterGroup', defaultGroupStore.enterGroup.bind(defaultGroupStore, socket));
     socket.on('leaveGroup', defaultGroupStore.leaveGroups.bind(defaultGroupStore, socket, []));
