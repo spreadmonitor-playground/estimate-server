@@ -28,7 +28,7 @@ function main(): void {
     socket.on('setProfile', defaultConnectionStore.setProfile.bind(defaultConnectionStore, socket));
     socket.on('createGroup', defaultGroupStore.createGroup.bind(defaultGroupStore, socket));
     socket.on('enterGroup', defaultGroupStore.enterGroup.bind(defaultGroupStore, socket));
-    socket.on('leaveGroup', defaultGroupStore.leaveGroups.bind(defaultGroupStore, socket, []));
+    socket.on('leaveGroups', defaultGroupStore.leaveGroups.bind(defaultGroupStore, socket, []));
     socket.on('sendEstimation', defaultEstimationHandler.handleNewEstimation.bind(defaultEstimationHandler, socket));
 
     /** Handle disconnection:  */
